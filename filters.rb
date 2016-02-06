@@ -4,12 +4,8 @@
 # Define a method find that:
 
 def find(id)
-  @candidates.each do | hash | 
-    if hash[:id] == id
-      return hash
-    else
-      return nil
-    end
+  @candidates.detect do | hash | 
+    hash[:id] == id
   end
 end
 
@@ -44,12 +40,8 @@ def qualified_candidates
   end
 end
 
-def sort_candidates
-  @candidates.sort do | a, b | 
+def sort_candidates(candidates)
+  candidates.sort do | a, b | 
     [b[:years_of_experience], b[:github_points]] <=> [a[:years_of_experience], a[:github_points]] 
   end
 end
-
-# def sort_qualified
-
-# end

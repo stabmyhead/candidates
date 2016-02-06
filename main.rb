@@ -5,11 +5,12 @@ require 'pry'
 require './candidates'
 require './filters'
 
-## Your test code can go here 
+
+# Your test code can go here 
 # pp qualified_candidates
 # pp sort_qualified_candidates
-
-# pp sort_candidates
+# pp find(1212)
+# # pp sort_candidates
 def candidates_program
   program_open = true
 
@@ -20,17 +21,18 @@ def candidates_program
     type 'qualified : Show only the qualified studients\r
     type 'quit'     : To exit the program"
 
-  choice = gets.chomp.lowercase
+  choice = gets.chomp.downcase
 
   case choice
-  when 'find' then puts "What's the ID of the candidates"
-    # id = gets.chomp.to_i
-    # puts find(id)
-  when 'all' then puts "all"
-  when 'qualified' then puts "qualified"
+  when 'find' then puts "What's the ID of the candidate?"
+    id = gets.chomp.to_i
+    pp find(id)
+  when 'all' then pp @candidates
+  when 'qualified' then pp sort_candidates(qualified_candidates)
   when 'quit' then program_open = false
-  else puts "wrong input."
+  else puts "Not a valid command."
   end
+end
 end
 
 candidates_program
