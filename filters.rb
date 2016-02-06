@@ -4,7 +4,6 @@
 # Define a method find that:
 
 def find(id)
-  # FIXME: doesn't return nil - nil method error
   @candidates.each do | hash | 
     if hash[:id] == id
       return hash
@@ -51,8 +50,6 @@ def sort_candidates
   end
 end
 
-def sort_qualified
-  qualified_candidates.sort do | a, b | 
-    [b[:years_of_experience], b[:github_points]] <=> [a[:years_of_experience], a[:github_points]] 
-  end
-end
+# def sort_qualified
+
+# end

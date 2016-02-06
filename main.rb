@@ -13,7 +13,7 @@ require './filters'
 def candidates_program
   program_open = true
 
-  while program open do 
+  while program_open do 
     puts "What would you like to do:\n
     type 'find'     : Find Candidate by ID\r
     type 'all'      : View all Candidates available\r
@@ -24,14 +24,13 @@ def candidates_program
 
   case choice
   when 'find' then puts "What's the ID of the candidates"
-    id = gets.chomp.to_i
-    puts find(id)
-  when 'all' then puts @candidates
-  when 'qualified' then 
+    # id = gets.chomp.to_i
+    # puts find(id)
+  when 'all' then puts "all"
+  when 'qualified' then puts "qualified"
   when 'quit' then program_open = false
-  else puts ""
+  else puts "wrong input."
   end
 end
-
 
 candidates_program
