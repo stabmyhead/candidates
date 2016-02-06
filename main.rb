@@ -4,7 +4,7 @@
 require 'pry'
 require './candidates'
 require './filters'
-
+require 'colorize'
 
 # Your test code can go here 
 # pp qualified_candidates
@@ -30,7 +30,7 @@ def candidates_program
   when 'all' then pp @candidates
   when 'qualified' then pp sort_candidates(qualified_candidates)
   when 'quit' then program_open = false
-  else puts "Not a valid command."
+  else puts "Not a valid command.".colorize(:red)
   end
 end
 end
